@@ -1,0 +1,62 @@
+.sbackground{
+    background-color: gray;
+    width: 100%;
+}
+
+.dino{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-image: url(dino.png);
+    bottom: 0px;
+}
+.cactus{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    background-image: url(cactus.png);
+    bottom: 0px
+    
+}
+.gameOver{
+    font-size: 36px;
+    text-align: center;
+    color: Red;
+    top: 200px;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  .background {
+    position: absolute;
+    bottom: 0px;
+    background-image: url('background.png');
+    background-repeat: repeat-x;
+    animation: slideright 900s infinite linear;
+    -webkit-animation: slideright 900s infinite linear;
+    width: 100%;
+    height: 200px;
+}
+.backgroundParado {
+    position: absolute;
+    bottom: 0px;
+    background-image: url('background.png');   
+    width: 100%;
+    height: 200px;
+}
+.info{
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+.itemInfo{
+    width: 33%;
+    text-align: center;
+}

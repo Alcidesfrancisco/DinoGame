@@ -8,6 +8,7 @@
     <title>Dino game sem internet</title>
     <link rel="stylesheet" href="style.css"></link>
     <script src="script.js" charset="utf-8" defer></script>
+    <script src="cronometro.js" charset="utf-8" defer></script>
     
 
     
@@ -15,17 +16,19 @@
 <body>
     <div class="info">
         <div class="itemInfo">
-            0000000
+            <h3 id="pontos">0</h3>
         </div>
         <div class="itemInfo">
-            00:00:00
+            <h3>
+                <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+            </h3>
         </div>
         <div class="itemInfo">
-            5
+            <h3 id="vidas">5</h3>
         </div>
 
     </div>
-    <div class="background">
+    <div id="container" class="background">
         <div class="dino"></div>
     </div>
 

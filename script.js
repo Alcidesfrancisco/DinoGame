@@ -1,9 +1,12 @@
+/* import {start} from "./cronometro"; */
 const dino = document.querySelector('.dino');
 console.log(dino);
 let pulando = false;
 const container = document.querySelector('.background');
 let posicaoDino = 0;
 let morreu = false;
+let pontos = 0;
+let pontua;
 
 document.addEventListener('keydown', (e) => {
     if(e.keyCode === 32 && !pulando && !morreu) {
@@ -51,6 +54,8 @@ function geraCactus(){
         if(posicaoCactus <= -60){
             clearInterval(moveCactus);
             container.removeChild(cactus);
+            //adiciona 10 pontos quando um cactus some
+            pontos += 10;
             //colisão
         }else if(posicaoCactus >= 0 && posicaoCactus <= 60 && posicaoDino < 50 ){
             clearInterval(moveCactus);
@@ -72,8 +77,24 @@ function gameOver(){
     morreu = true;
     container.classList.remove('background')
     container.classList.add('backgroundParado')
+    clearInterval(pontua);
 }
-
+function pontuar(){
+    //start();
+    pontua = setInterval(() =>{
+        pontos += 1;
+        addPontos(pontos);
+        
+    },1000)
+    
+}
+function addPontos(valor){
+    let pontosTela  = document.getElementById('pontos');
+    pontosTela.innerHTML = valor;
+    console.log(valor);
+}
+pontuar();
 geraCactus();
+
 
 
